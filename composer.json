@@ -1,0 +1,15 @@
+{
+    "name": "php-algo-data-structure/php-algo-data-structure",
+    "autoload": {
+        "psr-4": {
+            "PhpAlgoDataStructure\\PhpAlgoDataStructure\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "snowfallen",
+            "email": "bondarenkoov1998@gmail.com"
+        }
+    ],
+    "require": {}
+}
