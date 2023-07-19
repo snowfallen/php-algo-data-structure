@@ -5,7 +5,7 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedLists\SinglyLinkedList;
 
 require_once 'Node.php';
 
-class LinkedList
+class OldLinkedList
 {
     private Node|null $head;
     private Node|null $tail;
@@ -70,9 +70,19 @@ class LinkedList
             $currentNode = $currentNode->getNextNode();
         }
     }
+
+    public function getFirstNode()
+    {
+        return $this->head;
+    }
+
+    public function getLastNode()
+    {
+        return $this->tail;
+    }
 }
 
-$test = new LinkedList();
+$test = new OldLinkedList();
 $test->insertAtTheBeginning('1');
 $test->insertAtTheBeginning('0');
 $test->insertAtTheBeginning('-1');
@@ -81,4 +91,5 @@ $test->insertAtTheEnd('3');
 $test->deleteAtTheBeginning();
 $test->deleteAtTheBeginning();
 
-$test->displayElements();
+var_dump($test->getFirstNode());
+var_dump($test->getLastNode());
