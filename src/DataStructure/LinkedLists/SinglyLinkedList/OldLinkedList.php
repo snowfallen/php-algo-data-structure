@@ -23,8 +23,13 @@ class LinkedList
     public function insertAtTheBeginning(string $value): void
     {
         $newNode = new Node($value);
-        $newNode->nextNode = $this->head;
+
+        if ($this->head !== null) {
+            $newNode->setNextNode($this->head);
+        }
+
         $this->head = $newNode;
+
         if (!$this->tail) {
             $this->tail = $newNode;
         }
@@ -35,7 +40,7 @@ class LinkedList
      */
     public function deleteAtTheBeginning(): void
     {
-        $this->head = $this->head->nextNode;
+        $this->head = $this->head->getNextNode();
     }
 
     /**
@@ -49,7 +54,7 @@ class LinkedList
         if ($this->head === null) {
             $this->head = $newNode;
         } else {
-            $this->tail->nextNode = $newNode;
+            $this->tail->setNextNode($newNode);
         }
         $this->tail = $newNode;
     }
@@ -61,8 +66,8 @@ class LinkedList
     {
         $currentNode = $this->head;
         while ($currentNode) {
-            echo $currentNode->value . "\n";
-            $currentNode = $currentNode->nextNode;
+            echo $currentNode->getValue() . "\n";
+            $currentNode = $currentNode->getNextNode();
         }
     }
 }
@@ -73,6 +78,7 @@ $test->insertAtTheBeginning('0');
 $test->insertAtTheBeginning('-1');
 $test->insertAtTheEnd('2');
 $test->insertAtTheEnd('3');
+$test->deleteAtTheBeginning();
 $test->deleteAtTheBeginning();
 
 $test->displayElements();
