@@ -25,4 +25,9 @@ interface LinkedListInterface
      * @return int
      */
     public function getSize(): int;
+
+    /**
+     * @return bool
+     */
+    public function isEmpty(): bool;
 }
