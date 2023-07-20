@@ -29,9 +29,10 @@ interface LinkedListInterface
     public function deleteAtTheEnd(): void;
 
     /**
+     * @param NodeInterface $node
      * @return void
      */
-    public function insertAfter(): void;
+    public function insertAfterNodeWithValue(NodeInterface $node): void;
 
     /**
      * @return void
@@ -58,5 +59,4 @@ interface LinkedListInterface
      * @return void
      */
     public function displayElements(): void;
-
 }
