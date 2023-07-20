@@ -2,22 +2,28 @@
 
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
-require_once 'AbstractLinkedList.php';
-require_once 'Node.php';
+require_once 'LinkedListInsertion.php';
+require_once 'LinkedListDeletion.php';
+require_once '../LinkedListInterface.php';
 
-class LinkedList extends AbstractLinkedList
+class LinkedList implements LinkedListInterface
 {
+    private LinkedListInsertion $insertion;
+    private LinkedListDeletion $deletion;
+    private ?AbstractSinglyNode $head;
+    private ?AbstractSinglyNode $tail;
     private int $size;
-    private ?Node $head;
-    private ?Node $tail;
 
     public function __construct()
     {
         $this->size = 0;
         $this->head = null;
         $this->tail = null;
+        $this->insertion = new LinkedListInsertion();
+        $this->deletion = new LinkedListDeletion();
     }
 
     /**
@@ -26,15 +32,7 @@ class LinkedList extends AbstractLinkedList
      */
     public function insertAtTheBeginning(string $value): void
     {
-        $newNode = new Node($value);
-        if ($this->head) {
-            $newNode->setNextNode($this->head);
-        }
-        if (!$this->tail) {
-            $this->tail = $newNode;
-        }
-        $this->head = $newNode;
-        $this->size++;
+        $this->insertion->insertAtTheBeginning($this->head, $this->tail, $value, $this->size);
     }
 
     /**
@@ -42,10 +40,7 @@ class LinkedList extends AbstractLinkedList
      */
     public function deleteAtTheBeginning(): void
     {
-        if ($this->head) {
-            $this->head = $this->head->getNextNode();
-            $this->size--;
-        }
+        $this->deletion->deleteAtTheBeginning($this->head, $this->size);
     }
 
     /**
@@ -54,14 +49,7 @@ class LinkedList extends AbstractLinkedList
      */
     public function insertAtTheEnd(string $value): void
     {
-        $newNode = new Node($value);
-        if ($this->tail) {
-            $this->tail->setNextNode($newNode);
-            $this->tail = $newNode;
-            $this->size++;
-        } else {
-            $this->insertAtTheBeginning($value);
-        }
+        $this->insertion->insertAtTheEnd($this->head, $this->tail, $value, $this->size);
     }
 
     /**
@@ -70,20 +58,7 @@ class LinkedList extends AbstractLinkedList
     public function deleteAtTheEnd(): void
     {
         if (!$this->isEmpty()) {
-            if ($this->getSize() === 1) {
-                $this->head = null;
-                $this->tail = null;
-            } else {
-                $currentNode = $this->head;
-                while ($currentNode) {
-                    if ($currentNode->getNextNode() === $this->getLastNode()) {
-                        $currentNode->setNextNode(null);
-                        $this->tail = $currentNode;
-                    }
-                    $currentNode = $currentNode->getNextNode();
-                }
-            }
-            $this->size--;
+            $this->deletion->deleteAtTheEnd($this->head, $this->tail, $this->size);
         }
     }
 
@@ -97,21 +72,7 @@ class LinkedList extends AbstractLinkedList
         if ($this->isEmpty()) {
             $this->insertAtTheBeginning($value);
         } else {
-            $currentNode = $this->head;
-            while ($currentNode) {
-                if ($currentNode->getValue() === $nodeValue) {
-                    $newNode = new Node($value);
-                    $currentNodeNextNode = $currentNode->getNextNode();
-                    $currentNode->setNextNode($newNode);
-                    $newNode->setNextNode($currentNodeNextNode);
-                    if ($currentNodeNextNode === null) {
-                        $this->tail = $newNode;
-                    }
-                    $this->size++;
-                    break;
-                }
-                $currentNode = $currentNode->getNextNode();
-            }
+            $this->insertion->insertAfterNodeWithValue($this->head, $this->tail, $nodeValue, $value, $this->size);
         }
     }
 
@@ -122,24 +83,7 @@ class LinkedList extends AbstractLinkedList
     public function deleteAfterNodeWithValue(string $value): void
     {
         if (!$this->isEmpty()) {
-            $currentNode = $this->head;
-            while ($currentNode) {
-                if ($currentNode->getValue() === $value) {
-                    $deletedNode = $currentNode->getNextNode();
-                    if (!$deletedNode) {
-                        $this->deleteAtTheEnd();
-                    } else {
-                        $nextNode = $deletedNode->getNextNode();
-                        $currentNode->setNextNode($nextNode);
-                        if (!$nextNode) {
-                            $this->tail = $currentNode;
-                        }
-                        $this->size--;
-                    }
-                    break;
-                }
-                $currentNode = $currentNode->getNextNode();
-            }
+            $this->deletion->deleteAfterNodeWithValue($this->head, $this->tail, $this->size, $value);
         }
     }
 
@@ -184,7 +128,7 @@ class LinkedList extends AbstractLinkedList
     /**
      * @return bool
      */
-    private function isEmpty(): bool
+    public function isEmpty(): bool
     {
         return $this->getSize() === 0;
     }
@@ -207,7 +151,6 @@ $test->insertAfterNodeWithValue(4, 5);
 $test->deleteAfterNodeWithValue(4);
 $test->deleteAfterNodeWithValue(4);
 $test->deleteAfterNodeWithValue(4);
-
 $test->displayElements();
 var_dump($test->getLastNode());
 var_dump($test->getFirstNode());
