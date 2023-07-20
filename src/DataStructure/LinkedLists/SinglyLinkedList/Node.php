@@ -9,7 +9,7 @@ class Node implements NodeInterface
 {
 
     private string $value;
-    private ?Node $nextNode = null;
+    private ?Node $nextNode;
 
     /**
      * @param string $value
@@ -17,6 +17,7 @@ class Node implements NodeInterface
     public function __construct(string $value)
     {
         $this->value = $value;
+        $this->nextNode = null;
     }
 
     /**
