@@ -2,7 +2,7 @@
     "name": "php-algo-data-structure/php-algo-data-structure",
     "autoload": {
         "psr-4": {
-            "PhpAlgoDataStructure\\PhpAlgoDataStructure\\": "src/"
+            "PhpAlgoDataStructure\\": "src/"
         }
     },
     "authors": [
