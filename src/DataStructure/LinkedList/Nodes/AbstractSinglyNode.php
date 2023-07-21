@@ -9,11 +9,11 @@ abstract class AbstractSinglyNode implements NodeInterface
     /**
      * @return ?AbstractSinglyNode
      */
-    public abstract function getNextNode(): ?AbstractSinglyNode;
+    abstract public function getNextNode(): ?AbstractSinglyNode;
 
     /**
      * @param ?AbstractSinglyNode $nextNode
      * @return void
      */
-    public abstract function setNextNode(?AbstractSinglyNode $nextNode): void;
+    abstract public function setNextNode(?AbstractSinglyNode $nextNode): void;
 }
