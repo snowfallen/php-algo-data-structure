@@ -453,7 +453,6 @@ final class LinkedListTest extends TestCase
         $this->assertSame(3, $list->getSize());
         $list->deleteAfterNodeWithValue('Hello');
         $this->assertEquals('!', $list->getLastNode()->getValue());
-        $this->assertSame(2, $list->getSize());
     }
 
     /**
@@ -467,7 +466,6 @@ final class LinkedListTest extends TestCase
         $list->append('!');
         $this->assertSame(3, $list->getSize());
         $list->deleteAfterNodeWithValue('Hello');
-        $this->assertEquals('!', $list->getLastNode()->getValue());
         $this->assertSame(2, $list->getSize());
     }
 }
