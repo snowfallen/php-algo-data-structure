@@ -2,8 +2,6 @@
 
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Nodes;
 
-require_once 'NodeInterface.php';
-
 abstract class AbstractSinglyNode implements NodeInterface
 {
     /**

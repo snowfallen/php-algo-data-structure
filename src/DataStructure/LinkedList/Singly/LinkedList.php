@@ -5,10 +5,6 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
-require_once 'LinkedListInsertion.php';
-require_once 'LinkedListDeletion.php';
-require_once '../LinkedListInterface.php';
-
 class LinkedList implements LinkedListInterface
 {
     private LinkedListInsertion $insertion;
@@ -135,24 +131,3 @@ class LinkedList implements LinkedListInterface
         return $this->getSize() === 0;
     }
 }
-
-$test = new LinkedList();
-$test->prepend(1);
-$test->prepend(0);
-$test->prepend(0);
-$test->removeFirst();
-$test->append(2);
-$test->append(2);
-$test->removeLast();
-$test->append(3);
-$test->append(5);
-$test->removeLast();
-$test->append(4);
-$test->insertAfterNodeWithValue(4, 6);
-$test->insertAfterNodeWithValue(4, 5);
-$test->deleteAfterNodeWithValue(4);
-$test->deleteAfterNodeWithValue(4);
-$test->deleteAfterNodeWithValue(4);
-$test->displayElements();
-var_dump($test->getLastNode());
-var_dump($test->getFirstNode());

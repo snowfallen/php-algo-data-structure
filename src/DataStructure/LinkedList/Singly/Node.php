@@ -4,8 +4,6 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
-require_once '../Nodes/AbstractSinglyNode.php';
-
 class Node extends AbstractSinglyNode
 {
     private string $value;

@@ -4,9 +4,6 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
-require_once 'LinkedListInsertionInterface.php';
-require_once 'Node.php';
-
 final class LinkedListInsertion implements LinkedListInsertionInterface
 {
     /**

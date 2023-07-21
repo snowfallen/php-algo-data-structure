@@ -4,8 +4,6 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
-require_once 'LinkedListDeletionInterface.php';
-
 final class LinkedListDeletion implements LinkedListDeletionInterface
 {
     /**
