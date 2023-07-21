@@ -6,7 +6,7 @@ use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 
 require_once 'LinkedListDeletionInterface.php';
 
-class LinkedListDeletion implements LinkedListDeletionInterface
+final class LinkedListDeletion implements LinkedListDeletionInterface
 {
     /**
      * @param ?AbstractSinglyNode $head
@@ -22,7 +22,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
     /**
      * @return void
      */
-    final public function removeFirst(): void
+    public function removeFirst(): void
     {
         if ($this->size !== 1) {
             $this->head = $this->head->getNextNode();
@@ -36,7 +36,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
     /**
      * @return void
      */
-    final public function removeLast(): void
+    public function removeLast(): void
     {
         if ($this->size !== 1) {
             $currentNode = $this->head;
@@ -58,7 +58,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
      * @param string $value
      * @return void
      */
-    final public function deleteAfterNodeWithValue(string $value): void
+    public function deleteAfterNodeWithValue(string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {

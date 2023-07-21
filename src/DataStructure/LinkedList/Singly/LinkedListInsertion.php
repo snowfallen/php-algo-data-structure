@@ -7,7 +7,7 @@ use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\AbstractSinglyNode;
 require_once 'LinkedListInsertionInterface.php';
 require_once 'Node.php';
 
-class LinkedListInsertion implements LinkedListInsertionInterface
+final class LinkedListInsertion implements LinkedListInsertionInterface
 {
     /**
      * @param ?AbstractSinglyNode $head
@@ -24,7 +24,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    final public function prepend(string $value): void
+    public function prepend(string $value): void
     {
         $newNode = new Node($value);
 
@@ -42,7 +42,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    final public function append(string $value): void
+    public function append(string $value): void
     {
         $newNode = new Node($value);
 
@@ -61,7 +61,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-   final public function insertAfterNodeWithValue(string $nodeValue, string $value): void
+   public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {
