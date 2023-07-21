@@ -9,66 +9,84 @@ require_once 'LinkedListDeletionInterface.php';
 class LinkedListDeletion implements LinkedListDeletionInterface
 {
     /**
-     * @param AbstractSinglyNode $head
+     * @param ?AbstractSinglyNode $head
+     * @param ?AbstractSinglyNode $tail
      * @param int $size
+     */
+    public function __construct(private ?AbstractSinglyNode &$head, private ?AbstractSinglyNode &$tail, private int &$size){}
+
+    /**
      * @return void
      */
-    public function deleteAtTheBeginning(AbstractSinglyNode &$head, int &$size): void
+    public function removeFirst(): void
     {
-        $head = $head->getNextNode();
-        $size--;
+        if ($this->size !== 1) {
+            $this->head = $this->head->getNextNode();
+            $this->size--;
+
+            return;
+        }
+        $this->resetPointers();
     }
 
     /**
-     * @param AbstractSinglyNode $head
-     * @param AbstractSinglyNode $tail
-     * @param int $size
      * @return void
      */
-    public function deleteAtTheEnd(AbstractSinglyNode &$head, AbstractSinglyNode &$tail, int &$size): void
+    public function removeLast(): void
     {
-        if ($size === 1) {
-            $head = null;
-            $tail = null;
-        } else {
-            $currentNode = $head;
-            while ($currentNode) {
-                if ($currentNode->getNextNode() === $tail) {
-                    $currentNode->setNextNode(null);
-                    $tail = $currentNode;
-                }
+        if ($this->size !== 1) {
+            $currentNode = $this->head;
+
+            while ($currentNode && $currentNode->getNextNode() !== $this->tail) {
                 $currentNode = $currentNode->getNextNode();
             }
+
+            $currentNode->setNextNode(null);
+            $this->tail = $currentNode;
+            $this->size--;
+
+            return;
         }
-        $size--;
+        $this->resetPointers();
     }
 
     /**
-     * @param AbstractSinglyNode $head
-     * @param AbstractSinglyNode $tail
-     * @param int $size
      * @param string $value
      * @return void
      */
-    public function deleteAfterNodeWithValue(AbstractSinglyNode &$head, AbstractSinglyNode &$tail, int &$size, string $value): void
+    public function deleteAfterNodeWithValue(string $value): void
     {
-        $currentNode = $head;
+        $currentNode = $this->head;
         while ($currentNode) {
             if ($currentNode->getValue() === $value) {
                 $deletedNode = $currentNode->getNextNode();
+
                 if (!$deletedNode) {
-                    $this->deleteAtTheEnd($head, $tail, $size);
-                } else {
-                    $nextNode = $deletedNode->getNextNode();
-                    $currentNode->setNextNode($nextNode);
-                    if (!$nextNode) {
-                        $tail = $currentNode;
-                    }
-                    $size--;
+                    return;
                 }
-                break;
+
+                $nextNode = $deletedNode->getNextNode();
+                $currentNode->setNextNode($nextNode);
+
+                if (!$nextNode) {
+                    $this->tail = $currentNode;
+                }
+
+                $this->size--;
+
+                return;
             }
             $currentNode = $currentNode->getNextNode();
         }
+    }
+
+    /**
+     * @return void
+     */
+    private function resetPointers(): void
+    {
+        $this->head = null;
+        $this->tail = null;
+        $this->size--;
     }
 }

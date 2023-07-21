@@ -22,43 +22,45 @@ class LinkedList implements LinkedListInterface
         $this->size = 0;
         $this->head = null;
         $this->tail = null;
-        $this->insertion = new LinkedListInsertion();
-        $this->deletion = new LinkedListDeletion();
+        $this->insertion = new LinkedListInsertion($this->head, $this->tail, $this->size);
+        $this->deletion = new LinkedListDeletion($this->head, $this->tail, $this->size);
     }
 
     /**
      * @param string $value
      * @return void
      */
-    public function insertAtTheBeginning(string $value): void
+    public function prepend(string $value): void
     {
-        $this->insertion->insertAtTheBeginning($this->head, $this->tail, $value, $this->size);
+        $this->insertion->prepend($value);
     }
 
     /**
      * @return void
      */
-    public function deleteAtTheBeginning(): void
-    {
-        $this->deletion->deleteAtTheBeginning($this->head, $this->size);
-    }
-
-    /**
-     * @param string $value
-     * @return void
-     */
-    public function insertAtTheEnd(string $value): void
-    {
-        $this->insertion->insertAtTheEnd($this->head, $this->tail, $value, $this->size);
-    }
-
-    /**
-     * @return void
-     */
-    public function deleteAtTheEnd(): void
+    public function removeFirst(): void
     {
         if (!$this->isEmpty()) {
-            $this->deletion->deleteAtTheEnd($this->head, $this->tail, $this->size);
+            $this->deletion->removeFirst();
+        }
+    }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    public function append(string $value): void
+    {
+        $this->insertion->append($value);
+    }
+
+    /**
+     * @return void
+     */
+    public function removeLast(): void
+    {
+        if (!$this->isEmpty()) {
+            $this->deletion->removeLast();
         }
     }
 
@@ -70,9 +72,9 @@ class LinkedList implements LinkedListInterface
     public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
         if ($this->isEmpty()) {
-            $this->insertAtTheBeginning($value);
+            $this->prepend($value);
         } else {
-            $this->insertion->insertAfterNodeWithValue($this->head, $this->tail, $nodeValue, $value, $this->size);
+            $this->insertion->insertAfterNodeWithValue($nodeValue, $value);
         }
     }
 
@@ -83,7 +85,7 @@ class LinkedList implements LinkedListInterface
     public function deleteAfterNodeWithValue(string $value): void
     {
         if (!$this->isEmpty()) {
-            $this->deletion->deleteAfterNodeWithValue($this->head, $this->tail, $this->size, $value);
+            $this->deletion->deleteAfterNodeWithValue($value);
         }
     }
 
@@ -135,17 +137,17 @@ class LinkedList implements LinkedListInterface
 }
 
 $test = new LinkedList();
-$test->insertAtTheBeginning(1);
-$test->insertAtTheBeginning(0);
-$test->insertAtTheBeginning(0);
-$test->deleteAtTheBeginning();
-$test->insertAtTheEnd(2);
-$test->insertAtTheEnd(2);
-$test->deleteAtTheEnd();
-$test->insertAtTheEnd(3);
-$test->insertAtTheEnd(5);
-$test->deleteAtTheEnd();
-$test->insertAtTheEnd(4);
+$test->prepend(1);
+$test->prepend(0);
+$test->prepend(0);
+$test->removeFirst();
+$test->append(2);
+$test->append(2);
+$test->removeLast();
+$test->append(3);
+$test->append(5);
+$test->removeLast();
+$test->append(4);
 $test->insertAfterNodeWithValue(4, 6);
 $test->insertAfterNodeWithValue(4, 5);
 $test->deleteAfterNodeWithValue(4);

@@ -10,66 +10,70 @@ require_once 'Node.php';
 class LinkedListInsertion implements LinkedListInsertionInterface
 {
     /**
-     * @param AbstractSinglyNode|null $head
-     * @param AbstractSinglyNode|null $tail
-     * @param string $value
+     * @param ?AbstractSinglyNode $head
+     * @param ?AbstractSinglyNode $tail
      * @param int $size
-     * @return void
      */
-    public function insertAtTheBeginning(?AbstractSinglyNode &$head, ?AbstractSinglyNode &$tail, string $value, int &$size): void
-    {
-        $newNode = new Node($value);
-        if ($head) {
-            $newNode->setNextNode($head);
-        }
-        if (!$tail) {
-            $tail = $newNode;
-        }
-        $head = $newNode;
-        $size++;
-    }
+    public function __construct(private ?AbstractSinglyNode &$head, private ?AbstractSinglyNode &$tail, private int &$size){}
 
     /**
-     * @param AbstractSinglyNode|null $head
-     * @param AbstractSinglyNode|null $tail
      * @param string $value
-     * @param int $size
      * @return void
      */
-    public function insertAtTheEnd(?AbstractSinglyNode &$head, ?AbstractSinglyNode &$tail, string $value, int &$size): void
+    public function prepend(string $value): void
     {
         $newNode = new Node($value);
-        if ($tail) {
-            $tail->setNextNode($newNode);
-            $tail = $newNode;
-            $size++;
+
+        if ($this->head) {
+            $newNode->setNextNode($this->head);
         } else {
-            $this->insertAtTheBeginning($head, $tail, $value, $size);
+            $this->tail = $newNode;
         }
+
+        $this->head = $newNode;
+        $this->size++;
     }
 
     /**
-     * @param AbstractSinglyNode|null $head
-     * @param AbstractSinglyNode|null $tail
+     * @param string $value
+     * @return void
+     */
+    public function append(string $value): void
+    {
+        $newNode = new Node($value);
+
+        if ($this->tail) {
+            $this->tail->setNextNode($newNode);
+            $this->tail = $newNode;
+            $this->size++;
+            return;
+        }
+
+        $this->prepend($value);
+    }
+
+    /**
      * @param string $nodeValue
      * @param string $value
-     * @param int $size
      * @return void
      */
-    public function insertAfterNodeWithValue(?AbstractSinglyNode &$head, ?AbstractSinglyNode &$tail, string $nodeValue, string $value, int &$size): void
+    public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
-        $currentNode = $head;
+        $currentNode = $this->head;
         while ($currentNode) {
             if ($currentNode->getValue() === $nodeValue) {
                 $newNode = new Node($value);
                 $currentNodeNextNode = $currentNode->getNextNode();
                 $currentNode->setNextNode($newNode);
                 $newNode->setNextNode($currentNodeNextNode);
+
                 if ($currentNodeNextNode === null) {
-                    $tail = $newNode;
+                    $this->tail = $newNode;
                 }
-                $size++;
-                break;
+
+                $this->size++;
+
+                return;
             }
             $currentNode = $currentNode->getNextNode();
         }
