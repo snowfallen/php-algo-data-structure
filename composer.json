@@ -11,5 +11,7 @@
             "email": "bondarenkoov1998@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    }
 }
