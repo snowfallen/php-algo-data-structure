@@ -13,12 +13,16 @@ class LinkedListDeletion implements LinkedListDeletionInterface
      * @param ?AbstractSinglyNode $tail
      * @param int $size
      */
-    public function __construct(private ?AbstractSinglyNode &$head, private ?AbstractSinglyNode &$tail, private int &$size){}
+    public function __construct(
+        private ?AbstractSinglyNode &$head,
+        private ?AbstractSinglyNode &$tail,
+        private int                 &$size
+    ){}
 
     /**
      * @return void
      */
-    public function removeFirst(): void
+    final public function removeFirst(): void
     {
         if ($this->size !== 1) {
             $this->head = $this->head->getNextNode();
@@ -32,7 +36,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
     /**
      * @return void
      */
-    public function removeLast(): void
+    final public function removeLast(): void
     {
         if ($this->size !== 1) {
             $currentNode = $this->head;
@@ -54,7 +58,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
      * @param string $value
      * @return void
      */
-    public function deleteAfterNodeWithValue(string $value): void
+    final public function deleteAfterNodeWithValue(string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {

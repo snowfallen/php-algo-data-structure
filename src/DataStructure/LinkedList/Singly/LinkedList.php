@@ -30,7 +30,7 @@ class LinkedList implements LinkedListInterface
      * @param string $value
      * @return void
      */
-    public function prepend(string $value): void
+    final public function prepend(string $value): void
     {
         $this->insertion->prepend($value);
     }
@@ -38,7 +38,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return void
      */
-    public function removeFirst(): void
+    final public function removeFirst(): void
     {
         if (!$this->isEmpty()) {
             $this->deletion->removeFirst();
@@ -49,7 +49,7 @@ class LinkedList implements LinkedListInterface
      * @param string $value
      * @return void
      */
-    public function append(string $value): void
+    final public function append(string $value): void
     {
         $this->insertion->append($value);
     }
@@ -57,7 +57,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return void
      */
-    public function removeLast(): void
+    final public function removeLast(): void
     {
         if (!$this->isEmpty()) {
             $this->deletion->removeLast();
@@ -69,7 +69,7 @@ class LinkedList implements LinkedListInterface
      * @param string $value
      * @return void
      */
-    public function insertAfterNodeWithValue(string $nodeValue, string $value): void
+    final public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
         if ($this->isEmpty()) {
             $this->prepend($value);
@@ -82,7 +82,7 @@ class LinkedList implements LinkedListInterface
      * @param string $value
      * @return void
      */
-    public function deleteAfterNodeWithValue(string $value): void
+    final public function deleteAfterNodeWithValue(string $value): void
     {
         if (!$this->isEmpty()) {
             $this->deletion->deleteAfterNodeWithValue($value);
@@ -92,7 +92,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return ?AbstractSinglyNode
      */
-    public function getFirstNode(): ?AbstractSinglyNode
+    final public function getFirstNode(): ?AbstractSinglyNode
     {
         return $this->head;
     }
@@ -100,7 +100,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return ?AbstractSinglyNode
      */
-    public function getLastNode(): ?AbstractSinglyNode
+    final public function getLastNode(): ?AbstractSinglyNode
     {
         return $this->tail;
     }
@@ -108,7 +108,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return void
      */
-    public function displayElements(): void
+    final public function displayElements(): void
     {
         if (!$this->isEmpty()) {
             $currentNode = $this->head;
@@ -122,7 +122,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return int
      */
-    public function getSize(): int
+    final public function getSize(): int
     {
         return $this->size;
     }
@@ -130,7 +130,7 @@ class LinkedList implements LinkedListInterface
     /**
      * @return bool
      */
-    public function isEmpty(): bool
+    final public function isEmpty(): bool
     {
         return $this->getSize() === 0;
     }

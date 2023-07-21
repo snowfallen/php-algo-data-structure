@@ -14,13 +14,17 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param ?AbstractSinglyNode $tail
      * @param int $size
      */
-    public function __construct(private ?AbstractSinglyNode &$head, private ?AbstractSinglyNode &$tail, private int &$size){}
+    public function __construct(
+        private ?AbstractSinglyNode &$head,
+        private ?AbstractSinglyNode &$tail,
+        private int &$size
+    ){}
 
     /**
      * @param string $value
      * @return void
      */
-    public function prepend(string $value): void
+    final public function prepend(string $value): void
     {
         $newNode = new Node($value);
 
@@ -38,7 +42,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    public function append(string $value): void
+    final public function append(string $value): void
     {
         $newNode = new Node($value);
 
@@ -57,7 +61,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    public function insertAfterNodeWithValue(string $nodeValue, string $value): void
+   final public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {
