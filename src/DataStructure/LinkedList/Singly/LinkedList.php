@@ -67,9 +67,7 @@ class LinkedList implements LinkedListInterface
      */
     final public function insertAfterNodeWithValue(string $nodeValue, string $value): void
     {
-        if ($this->isEmpty()) {
-            $this->prepend($value);
-        } else {
+        if (!$this->isEmpty()) {
             $this->insertion->insertAfterNodeWithValue($nodeValue, $value);
         }
     }
