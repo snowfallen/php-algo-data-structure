@@ -23,7 +23,7 @@ class Node extends AbstractSinglyNode
     /**
      * @return string
      */
-    public function getValue(): string
+    final public function getValue(): string
     {
         return $this->value;
     }
@@ -32,7 +32,7 @@ class Node extends AbstractSinglyNode
      * @param string $newValue
      * @return void
      */
-    public function setValue(string $newValue): void
+    final public function setValue(string $newValue): void
     {
         $this->value = $newValue;
     }
@@ -40,7 +40,7 @@ class Node extends AbstractSinglyNode
     /**
      * @return ?AbstractSinglyNode
      */
-    public function getNextNode(): ?AbstractSinglyNode
+    final public function getNextNode(): ?AbstractSinglyNode
     {
         return $this->nextNode;
     }
@@ -49,7 +49,7 @@ class Node extends AbstractSinglyNode
      * @param ?AbstractSinglyNode $nextNode
      * @return void
      */
-    public function setNextNode(?AbstractSinglyNode $nextNode): void
+    final public function setNextNode(?AbstractSinglyNode $nextNode): void
     {
         $this->nextNode = $nextNode;
     }
