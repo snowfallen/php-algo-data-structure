@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Doubly;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\DoublyLinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedListDeletionInterface
 {

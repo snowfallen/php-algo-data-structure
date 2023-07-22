@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Nodes;
 
 class SinglyNode implements NodeInterface, SinglyNodeInterface
 {

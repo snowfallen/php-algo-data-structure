@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList;
 
 interface LinkedListDeletionInterface
 {

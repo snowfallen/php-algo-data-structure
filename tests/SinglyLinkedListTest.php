@@ -2,8 +2,8 @@
 
 namespace tests;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes\NodeInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Singly\SinglyLinkedList;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Singly\SinglyLinkedList;
 use PHPUnit\Framework\TestCase;
 
 final class SinglyLinkedListTest extends TestCase

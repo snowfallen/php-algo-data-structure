@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class LinkedList implements LinkedListInterface
 {

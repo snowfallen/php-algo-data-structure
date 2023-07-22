@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Doubly;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\DoublyLinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\DoublyLinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedList;
+use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedList;
 
 class DoublyLinkedList extends LinkedList implements LinkedListDeletionInterface, LinkedListInsertionInterface, DoublyLinkedListInsertionInterface, DoublyLinkedListDeletionInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Doubly;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\DoublyLinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface
 {

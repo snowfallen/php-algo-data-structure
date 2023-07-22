@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Singly;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedList;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedList;
 
 final class SinglyLinkedList extends LinkedList implements LinkedListInsertionInterface, LinkedListDeletionInterface
 {

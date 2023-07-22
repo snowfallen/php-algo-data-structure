@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Doubly\DoublyLinkedList;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Doubly\DoublyLinkedList;
 use PHPUnit\Framework\TestCase;
 
 final class DoublyLinkedListTest extends TestCase

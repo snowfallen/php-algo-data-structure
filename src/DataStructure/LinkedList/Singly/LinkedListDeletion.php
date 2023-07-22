@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\NewLinkedList\Singly;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\NewLinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class LinkedListDeletion implements LinkedListDeletionInterface
 {
