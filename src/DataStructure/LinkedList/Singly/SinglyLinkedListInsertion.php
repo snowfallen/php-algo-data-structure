@@ -6,7 +6,7 @@ use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\SinglyNode;
 
-class LinkedListInsertion implements LinkedListInsertionInterface
+class SinglyLinkedListInsertion implements LinkedListInsertionInterface
 {
     /**
      * @param ?NodeInterface $head
@@ -23,7 +23,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    public function prepend(string $value): void
+    final public function prepend(string $value): void
     {
         $newNode = new SinglyNode($value);
 
@@ -41,7 +41,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    public function append(string $value): void
+    final public function append(string $value): void
     {
         $newNode = new SinglyNode($value);
 
@@ -60,7 +60,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface
      * @param string $value
      * @return void
      */
-    public function insertNodeAfterValue(string $nodeValue, string $value): void
+    final public function insertNodeAfterValue(string $nodeValue, string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {

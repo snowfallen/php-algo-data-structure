@@ -3,18 +3,82 @@
 namespace PhpAlgoDataStructure\DataStructure\LinkedList;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Singly\SinglyLinkedListDeletion;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Doubly\DoublyLinkedListDeletion;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Singly\SinglyLinkedListInsertion;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Doubly\DoublyLinkedListInsertion;
 
-class LinkedList implements LinkedListInterface
+
+class LinkedList implements LinkedListInterface, LinkedListInsertionInterface, LinkedListDeletionInterface
 {
-    protected ?NodeInterface $head;
-    protected ?NodeInterface $tail;
-    protected int $size;
+    protected ?NodeInterface $head = null;
+    protected ?NodeInterface $tail = null;
+    protected int $size = 0;
 
-    public function __construct()
+    public function __construct(
+        private SinglyLinkedListInsertion|DoublyLinkedListInsertion $insertion,
+        private SinglyLinkedListDeletion|DoublyLinkedListDeletion $deletion
+    ){}
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    final public function prepend(string $value): void
     {
-        $this->size = 0;
-        $this->head = null;
-        $this->tail = null;
+        $this->insertion->prepend($value);
+    }
+
+    /**
+     * @return void
+     */
+    final public function removeFirst(): void
+    {
+        if (!$this->isEmpty()) {
+            $this->deletion->removeFirst();
+        }
+    }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    final public function append(string $value): void
+    {
+        $this->insertion->append($value);
+    }
+
+    /**
+     * @return void
+     */
+    final public function removeLast(): void
+    {
+        if (!$this->isEmpty()) {
+            $this->deletion->removeLast();
+        }
+    }
+
+    /**
+     * @param string $nodeValue
+     * @param string $value
+     * @return void
+     */
+    final public function insertNodeAfterValue(string $nodeValue, string $value): void
+    {
+        if (!$this->isEmpty()) {
+            $this->insertion->insertNodeAfterValue($nodeValue, $value);
+        }
+    }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    final public function removeNodeAfterValue(string $value): void
+    {
+        if (!$this->isEmpty()) {
+            $this->deletion->removeNodeAfterValue($value);
+        }
     }
 
     /**

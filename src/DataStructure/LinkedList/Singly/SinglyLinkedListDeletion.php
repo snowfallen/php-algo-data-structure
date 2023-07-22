@@ -5,7 +5,7 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
-class LinkedListDeletion implements LinkedListDeletionInterface
+class SinglyLinkedListDeletion implements LinkedListDeletionInterface
 {
     /**
      * @param ?NodeInterface $head
@@ -21,7 +21,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
     /**
      * @return void
      */
-    public function removeFirst(): void
+    final public function removeFirst(): void
     {
         if ($this->size !== 1) {
             $this->head = $this->head->getNextNode();
@@ -35,7 +35,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
     /**
      * @return void
      */
-    public function removeLast(): void
+    final public function removeLast(): void
     {
         if ($this->size !== 1) {
             $currentNode = $this->head;
@@ -57,7 +57,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface
      * @param string $value
      * @return void
      */
-    public function removeNodeAfterValue(string $value): void
+    final public function removeNodeAfterValue(string $value): void
     {
         $currentNode = $this->head;
         while ($currentNode) {
