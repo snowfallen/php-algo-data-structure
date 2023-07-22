@@ -6,7 +6,7 @@ use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListDeletionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
-class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedListDeletionInterface
+class DoublyLinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedListDeletionInterface
 {
     /**
      * @param ?NodeInterface $head
@@ -22,7 +22,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedLis
     /**
      * @return void
      */
-    public function removeFirst(): void
+    final public function removeFirst(): void
     {
         // TODO: Implement removeFirst() method.
     }
@@ -30,7 +30,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedLis
     /**
      * @return void
      */
-    public function removeLast(): void
+    final public function removeLast(): void
     {
         // TODO: Implement removeLast() method.
     }
@@ -39,7 +39,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedLis
      * @param string $value
      * @return void
      */
-    public function removeNodeAfterValue(string $value): void
+    final public function removeNodeAfterValue(string $value): void
     {
         // TODO: Implement removeNodeAfterValue() method.
     }
@@ -48,7 +48,7 @@ class LinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedLis
      * @param string $value
      * @return void
      */
-    public function removeNodeBeforeValue(string $value): void
+    final public function removeNodeBeforeValue(string $value): void
     {
         // TODO: Implement removeNodeBeforeValue() method.
     }

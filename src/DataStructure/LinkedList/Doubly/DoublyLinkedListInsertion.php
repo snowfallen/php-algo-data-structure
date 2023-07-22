@@ -6,7 +6,7 @@ use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListInsertionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
-class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface
+class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface
 {
     /**
      * @param ?NodeInterface $head
@@ -23,7 +23,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedL
      * @param string $value
      * @return void
      */
-    public function prepend(string $value): void
+    final public function prepend(string $value): void
     {
         // TODO: Implement prepend() method.
     }
@@ -32,7 +32,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedL
      * @param string $value
      * @return void
      */
-    public function append(string $value): void
+    final public function append(string $value): void
     {
         // TODO: Implement append() method.
     }
@@ -42,7 +42,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedL
      * @param string $value
      * @return void
      */
-    public function insertNodeAfterValue(string $nodeValue, string $value): void
+    final public function insertNodeAfterValue(string $nodeValue, string $value): void
     {
         // TODO: Implement insertNodeAfterValue() method.
     }
@@ -51,7 +51,7 @@ class LinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedL
      * @param string $value
      * @return void
      */
-    public function insertNodeBeforeValue(string $value): void
+    final public function insertNodeBeforeValue(string $value): void
     {
         // TODO: Implement insertNodeBeforeValue() method.
     }

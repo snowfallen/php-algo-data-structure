@@ -2,7 +2,7 @@
 
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Nodes;
 
-final class DoublyNode extends SinglyNode implements DoublyNodeInterface
+class DoublyNode extends SinglyNode implements DoublyNodeInterface
 {
     private ?NodeInterface $previousNode;
 
@@ -18,7 +18,7 @@ final class DoublyNode extends SinglyNode implements DoublyNodeInterface
     /**
      * @return NodeInterface|null
      */
-    public function getPreviousNode(): ?NodeInterface
+    final public function getPreviousNode(): ?NodeInterface
     {
         return $this->previousNode;
     }
@@ -27,7 +27,7 @@ final class DoublyNode extends SinglyNode implements DoublyNodeInterface
      * @param NodeInterface|null $newPreviousNode
      * @return void
      */
-    public function setPreviousNode(?NodeInterface $newPreviousNode): void
+    final public function setPreviousNode(?NodeInterface $newPreviousNode): void
     {
         $this->previousNode = $newPreviousNode;
     }
