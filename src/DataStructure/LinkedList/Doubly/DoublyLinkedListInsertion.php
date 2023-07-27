@@ -3,7 +3,6 @@
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
-use PhpAlgoDataStructure\DataStructure\LinkedList\DoublyLinkedListInsertionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface

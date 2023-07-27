@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpAlgoDataStructure\DataStructure\LinkedList;
+namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
 interface DoublyLinkedListInsertionInterface
 {
