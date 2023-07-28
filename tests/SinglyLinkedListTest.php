@@ -322,7 +322,7 @@ final class SinglyLinkedListTest extends TestCase
     /**
      * @return void
      */
-    public function testIsTheHeadIsAAbstractSinglyNodeType(): void
+    public function testIsTheHeadIsTheSinglyNodeType(): void
     {
         $list = new SinglyLinkedList();
         $list->prepend('Hi');
@@ -332,7 +332,7 @@ final class SinglyLinkedListTest extends TestCase
     /**
      * @return void
      */
-    public function testIsTheTailIsAAbstractSinglyNodeType(): void
+    public function testIsTheTailIsTheSinglyNodeType(): void
     {
         $list = new SinglyLinkedList();
         $list->prepend('Hi');
