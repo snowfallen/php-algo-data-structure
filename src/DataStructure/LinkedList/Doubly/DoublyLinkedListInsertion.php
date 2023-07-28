@@ -4,18 +4,18 @@ namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\DoublyNode;
-use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\DoublyNodeInterface;
 
 class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface
 {
     /**
-     * @param ?NodeInterface $head
-     * @param ?NodeInterface $tail
+     * @param ?DoublyNodeInterface $head
+     * @param ?DoublyNodeInterface $tail
      * @param int $size
      */
     public function __construct(
-        private ?NodeInterface &$head,
-        private ?NodeInterface &$tail,
+        private ?DoublyNodeInterface &$head,
+        private ?DoublyNodeInterface &$tail,
         private int            &$size
     ){}
 
@@ -30,6 +30,7 @@ class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyL
 
         if ($this->head) {
             $newNode->setNextNode($this->head);
+            $this->head->setPreviousNode($newNode);
         } else {
             $this->tail = $newNode;
         }

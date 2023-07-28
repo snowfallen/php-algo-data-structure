@@ -3,18 +3,18 @@
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\DoublyNodeInterface;
 
 class DoublyLinkedListDeletion implements LinkedListDeletionInterface, DoublyLinkedListDeletionInterface
 {
     /**
-     * @param ?NodeInterface $head
-     * @param ?NodeInterface $tail
+     * @param ?DoublyNodeInterface $head
+     * @param ?DoublyNodeInterface $tail
      * @param int $size
      */
     public function __construct(
-        private ?NodeInterface &$head,
-        private ?NodeInterface &$tail,
+        private ?DoublyNodeInterface &$head,
+        private ?DoublyNodeInterface &$tail,
         private int            &$size
     ){}
 
