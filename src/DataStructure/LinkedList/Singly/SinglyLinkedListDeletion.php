@@ -3,18 +3,18 @@
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Singly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListDeletionInterface;
-use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\SinglyNodeInterface;
 
 class SinglyLinkedListDeletion implements LinkedListDeletionInterface
 {
     /**
-     * @param ?NodeInterface $head
-     * @param ?NodeInterface $tail
+     * @param ?SinglyNodeInterface $head
+     * @param ?SinglyNodeInterface $tail
      * @param int $size
      */
     public function __construct(
-        private ?NodeInterface &$head,
-        private ?NodeInterface &$tail,
+        private ?SinglyNodeInterface &$head,
+        private ?SinglyNodeInterface &$tail,
         private int            &$size
     ){}
 

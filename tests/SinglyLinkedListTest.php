@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\SinglyNodeInterface;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Singly\SinglyLinkedList;
 use PHPUnit\Framework\TestCase;
 
@@ -326,7 +326,7 @@ final class SinglyLinkedListTest extends TestCase
     {
         $list = new SinglyLinkedList();
         $list->prepend('Hi');
-        $this->assertInstanceOf(NodeInterface::class, $list->getFirstNode());
+        $this->assertInstanceOf(SinglyNodeInterface::class, $list->getFirstNode());
     }
 
     /**
@@ -336,7 +336,7 @@ final class SinglyLinkedListTest extends TestCase
     {
         $list = new SinglyLinkedList();
         $list->prepend('Hi');
-        $this->assertInstanceOf(NodeInterface::class, $list->getLastNode());
+        $this->assertInstanceOf(SinglyNodeInterface::class, $list->getLastNode());
     }
 
     /**
