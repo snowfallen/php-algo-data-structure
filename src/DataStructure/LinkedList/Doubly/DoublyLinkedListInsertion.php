@@ -3,6 +3,7 @@
 namespace PhpAlgoDataStructure\DataStructure\LinkedList\Doubly;
 
 use PhpAlgoDataStructure\DataStructure\LinkedList\LinkedListInsertionInterface;
+use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\DoublyNode;
 use PhpAlgoDataStructure\DataStructure\LinkedList\Nodes\NodeInterface;
 
 class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyLinkedListInsertionInterface
@@ -24,7 +25,17 @@ class DoublyLinkedListInsertion implements LinkedListInsertionInterface, DoublyL
      */
     final public function prepend(string $value): void
     {
-        // TODO: Implement prepend() method.
+        $newNode = new DoublyNode($value);
+        $this->head->setNextNode($newNode);
+
+        if ($this->head) {
+            $newNode->setNextNode($this->head);
+        } else {
+            $this->tail = $newNode;
+        }
+
+        $this->head = $newNode;
+        $this->size++;
     }
 
     /**
