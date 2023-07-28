@@ -16,7 +16,7 @@ class DoublyNode extends SinglyNode implements DoublyNodeInterface
     }
 
     /**
-     * @return NodeInterface|null
+     * @return ?NodeInterface
      */
     final public function getPreviousNode(): ?NodeInterface
     {
@@ -24,7 +24,7 @@ class DoublyNode extends SinglyNode implements DoublyNodeInterface
     }
 
     /**
-     * @param NodeInterface|null $newPreviousNode
+     * @param ?NodeInterface $newPreviousNode
      * @return void
      */
     final public function setPreviousNode(?NodeInterface $newPreviousNode): void
