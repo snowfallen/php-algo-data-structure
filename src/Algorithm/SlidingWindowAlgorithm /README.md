@@ -46,6 +46,36 @@ Subarray size: `3`
 7. **Function Return**:
     - Return `maxSum`, which is `9`.
 
+## Time Complexity
+
+The time complexity of the Sliding Window Algorithm is mainly determined by the loop that iterates through the array. In
+this case, we are iterating through the entire array once. Let's denote the length of the input array as `n` and the
+size of the subarray as `k`.
+
+1. The loop iterates from index `0` to index `n - 1`, performing constant-time operations inside the loop.
+2. Within the loop, we perform addition and subtraction operations for the `currentWindowSum` and update the `maxSum`.
+   These operations take constant time as well.
+
+Overall, the time complexity of the algorithm is O(n), where `n` is the length of the input array.
+
+## Space Complexity
+
+The space complexity of the algorithm is determined by the additional variables used for computation, which remain
+constant regardless of the input size.
+
+1. `maxSum`, `currentWindowSum`, and `windowStart` are used to store integer values, so they occupy constant space.
+2. The loop variable `i` is also constant space.
+3. No additional data structures are used that depend on the input size.
+
+As a result, the space complexity of the algorithm is O(1), indicating constant space usage regardless of the input
+size.
+
+- Time Complexity: O(n) - Linear time complexity, where `n` is the length of the input array.
+- Space Complexity: O(1) - Constant space complexity, as the amount of memory used does not depend on the input size.
+
+The Sliding Window Algorithm provides an efficient solution with linear time complexity and constant space complexity
+for problems that involve finding maximum or minimum values within subarrays.
+
 ## Conclusion
 
 The Sliding Window Algorithm efficiently solved the problem of finding the maximum sum within a subarray of size `3` in
