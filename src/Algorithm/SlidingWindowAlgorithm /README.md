@@ -73,8 +73,6 @@ size.
 - Time Complexity: O(n) - Linear time complexity, where `n` is the length of the input array.
 - Space Complexity: O(1) - Constant space complexity, as the amount of memory used does not depend on the input size.
 
-The Sliding Window Algorithm provides an efficient solution with linear time complexity and constant space complexity
-for problems that involve finding maximum or minimum values within subarrays.
 
 ## Conclusion
 
